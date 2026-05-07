@@ -1,0 +1,14 @@
+<menu />
+<view class="container">
+  <!-- 你原来的页面内容 -->
+</view><view class="container">
+  <view class="header">📚 封神避坑/赚钱宝典</view>
+  
+  <view class="card" wx:for="{{wikiList}}" wx:key="title">
+    <view class="card-tag">{{item.tag}}</view>
+    <view class="card-title">{{item.title}}</view>
+    <view class="card-content">{{item.content}}</view>
+  </view>
+
+  <view class="footer">- 持续更新中，关注老朱不迷路 -</view>
+</view>

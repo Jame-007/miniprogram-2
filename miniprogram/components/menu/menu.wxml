@@ -1,0 +1,50 @@
+<!-- 遮罩层 -->
+<view class="mask" wx:if="{{showMenu}}" bindtap="toggleMenu"></view>
+
+<!-- 侧边菜单 -->
+<view class="side-menu" style="left: {{showMenu ? '0' : '-70%'}}">
+  <view class="menu-header">
+    <text class="menu-title">FS不求人</text>
+    <view class="close-btn" bindtap="toggleMenu">✕</view>
+  </view>
+
+  <view class="menu-list">
+    <view class="menu-item {{active === 'index' ? 'active' : ''}}" 
+          bindtap="goToPage" data-path="/pages/index/index" data-name="index">
+      <text class="icon">⚔️</text>
+      <text class="text">配速诊断</text>
+    </view>
+    <view class="menu-item {{active === 'pet' ? 'active' : ''}}" 
+          bindtap="goToPage" data-path="/pages/pet/index" data-name="pet">
+      <text class="icon">🐾</text>
+      <text class="text">宠物打书</text>
+    </view>
+    <view class="menu-item {{active === 'wiki' ? 'active' : ''}}" 
+          bindtap="goToPage" data-path="/pages/wiki/index" data-name="wiki">
+      <text class="icon">📖</text>
+      <text class="text">避坑宝典</text>
+    </view>
+
+    <!-- 预留后续功能入口，现在先隐藏，加功能时直接去掉hidden -->
+    <view class="menu-divider"></view>
+    <view class="menu-item" hidden bindtap="goToPage" data-path="/pages/gold/index" data-name="gold">
+      <text class="icon">💰</text>
+      <text class="text">每日元宝记录</text>
+    </view>
+    <view class="menu-item" hidden bindtap="goToPage" data-path="/pages/reforge/index" data-name="reforge">
+      <text class="icon">🔨</text>
+      <text class="text">灵饰洗练模拟</text>
+    </view>
+    <view class="menu-item" hidden bindtap="goToPage" data-path="/pages/treasure/index" data-name="treasure">
+      <text class="icon">✨</text>
+      <text class="text">法宝炼灵模拟</text>
+    </view>
+  </view>
+</view>
+
+<!-- 汉堡按钮 -->
+<view class="hamburger" bindtap="toggleMenu">
+  <view class="bar"></view>
+  <view class="bar"></view>
+  <view class="bar"></view>
+</view>

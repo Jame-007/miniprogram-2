@@ -1,0 +1,126 @@
+/* 全局：封神幻想世界 统一仙侠风格 */
+page {
+  background: linear-gradient(180deg, #274B59 0%, #3C6F78 35%, #5A9BA3 70%, #D7EAE6 100%);
+  min-height: 100vh;
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  color: #3A4849;
+  box-sizing: border-box;
+}
+
+/* 全局容器 */
+.container {
+  padding: 24rpx 32rpx;
+  box-sizing: border-box;
+}
+
+/* -------------- 通用卡片（所有模块共用）-------------- */
+.card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1rpx solid rgba(220, 200, 160, 0.45);
+  border-radius: 36rpx;
+  box-shadow: 0 12rpx 40rpx rgba(0, 0, 0, 0.08), inset 0 2rpx 0 rgba(255, 255, 255, 0.5);
+  padding: 40rpx;
+  margin-bottom: 32rpx;
+}
+
+/* -------------- 标题层级 -------------- */
+.title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin: 20rpx 0 40rpx;
+  text-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.25);
+  letter-spacing: 2rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #3A4849;
+  margin-bottom: 30rpx;
+  letter-spacing: 1rpx;
+}
+
+.sub-title {
+  font-size: 22rpx;
+  color: #708082;
+  font-weight: normal;
+}
+
+/* -------------- 表单项通用 -------------- */
+.form-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28rpx;
+  font-size: 26rpx;
+}
+.form-item:last-child {
+  margin-bottom: 0;
+}
+
+/* 输入框 */
+.input {
+  width: 180rpx;
+  height: 72rpx;
+  border: 1rpx solid rgba(210, 190, 155, 0.6);
+  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  font-size: 26rpx;
+  color: #3A4849;
+}
+
+/* 选择器 */
+.picker {
+  width: 180rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  border: 1rpx solid rgba(210, 190, 155, 0.6);
+  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  font-size: 24rpx;
+}
+
+/* -------------- 主按钮 -------------- */
+.btn-primary {
+  background: linear-gradient(180deg, #D49668 0%, #B86F42 100%);
+  color: #fff;
+  border-radius: 28rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: 600;
+  margin: 20rpx 0;
+  box-shadow: 0 12rpx 36rpx rgba(184, 111, 66, 0.3);
+  border: 1rpx solid rgba(255, 255, 255, 0.25);
+}
+
+/* -------------- 结果面板 -------------- */
+.result-card {
+  background: rgba(226, 240, 245, 0.75);
+  border: 1rpx solid rgba(180, 210, 220, 0.55);
+  border-radius: 36rpx;
+  padding: 40rpx;
+}
+
+.highlight {
+  color: #B85C38;
+  font-size: 40rpx;
+  font-weight: 800;
+}
+
+/* -------------- 动画 -------------- */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,53 @@
+<view class="container">
+
+<!-- 顶部标题 -->
+<view class="page-title">FS 不求人 · 封神工具箱</view>
+
+<!-- 公告栏 -->
+<view class="notice-card card">
+  <text class="notice-text">📢 欢迎使用，所有数据本地计算，安全不泄露</text>
+</view>
+
+<!-- 核心功能区（3个大卡片） -->
+<view class="grid-core">
+  <view class="core-item card" bindtap="goPage" data-url="/pages/calc/index">
+    <view class="icon">⚔️</view>
+    <view class="title">配速计算</view>
+    <view class="desc">战斗乱敏精准计算</view>
+  </view>
+
+  <view class="core-item card" bindtap="goPage" data-url="/pages/gold/index">
+    <view class="icon">💰</view>
+    <view class="title">元宝记录</view>
+    <view class="desc">每日收益清晰统计</view>
+  </view>
+
+  <view class="core-item card" bindtap="goPage" data-url="/pages/ling/ling">
+    <view class="icon">✨</view>
+    <view class="title">灵饰洗练</view>
+    <view class="desc">模拟属性不耗资源</view>
+  </view>
+</view>
+
+<!-- 辅助功能区 -->
+<view class="section-title">辅助工具</view>
+<view class="grid-normal">
+  <view class="normal-item card" bindtap="goPage" data-url="/pages/pet/index">
+    <view class="icon">🐾</view>
+    <view class="title">宠物打书</view>
+  </view>
+  <view class="normal-item card" bindtap="goPage" data-url="/pages/wiki/index">
+    <view class="icon">📖</view>
+    <view class="title">避坑宝典</view>
+  </view>
+  <view class="normal-item card">
+    <view class="icon">🔮</view>
+    <view class="title">法宝炼灵</view>
+  </view>
+  <view class="normal-item card">
+    <view class="icon">📊</view>
+    <view class="title">更多功能</view>
+  </view>
+</view>
+
+</view>

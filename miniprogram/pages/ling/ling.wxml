@@ -1,0 +1,32 @@
+<view class="page">
+  <view class="card">
+    <view class="title">{{typeName}}（{{level}}级）</view>
+
+    <view class="score-row">
+      <view>装备评分：{{totalScore}}</view>
+      <view>属性分：{{attrScore}} | 技能分：{{effectScore}}</view>
+    </view>
+
+    <view class="attrs">
+      <view class="attr-item" wx:for="{{attrs}}" wx:key="index">
+        {{item.label}}：+{{item.value}}
+      </view>
+    </view>
+
+    <view class="effects">
+      <view class="effect-empty" wx:if="{{effects.length === 0}}">暂无技能</view>
+      <view class="effect-item" wx:for="{{effects}}" wx:key="index">
+        【{{item}}】
+      </view>
+    </view>
+
+    <view class="btns">
+      <button bindtap="changeType" class="btn-switch">
+        切换：{{type === 1 ? '项圈' : '护甲'}}
+      </button>
+      <button bindtap="refresh" class="btn-refresh">
+        洗练（重置）
+      </button>
+    </view>
+  </view>
+</view>

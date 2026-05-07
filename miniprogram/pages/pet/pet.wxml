@@ -1,0 +1,40 @@
+<menu />
+<view class="container">
+  <!-- 你原来的页面内容 -->
+</view><view class="container">
+  <view class="header">🐾 宠物毕业打书指南</view>
+  
+  <scroll-view class="nav-scroll" scroll-x="true">
+    <view class="nav-item {{currentTab == index ? 'active' : ''}}" 
+          wx:for="{{petList}}" wx:key="id" bindtap="switchTab" data-index="{{index}}">
+      {{item.name}}
+    </view>
+  </scroll-view>
+
+  <view class="content-card">
+    <view class="pet-title">{{petList[currentTab].name}} - {{petList[currentTab].type}}</view>
+    
+    <view class="info-item">
+      <text class="label">💡 加点建议：</text>
+      <text class="val">{{petList[currentTab].points}}</text>
+    </view>
+
+    <view class="skill-box">
+      <view class="label">🔥 核心打书：</view>
+      <view class="tags">
+        <view class="tag" wx:for="{{petList[currentTab].skills}}" wx:key="*this">{{item}}</view>
+      </view>
+    </view>
+
+    <view class="skill-box" wx:if="{{petList[currentTab].hufu}}">
+      <view class="label">💍 护符推荐：</view>
+      <view class="tags">
+        <view class="tag hufu" wx:for="{{petList[currentTab].hufu}}" wx:key="*this">{{item}}</view>
+      </view>
+    </view>
+
+    <view class="note" wx:if="{{petList[currentTab].note}}">
+      ⚠️ 备注：{{petList[currentTab].note}}
+    </view>
+  </view>
+</view>

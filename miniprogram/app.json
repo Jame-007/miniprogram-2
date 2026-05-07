@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/wiki/index",
+    "pages/profile/index",
+    "pages/ling/ling"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#2A4D5A",
+    "navigationBarTitleText": "FS不求人",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#3C6F78"
+  },
+  "tabBar": {
+    "color": "#869A9B",
+    "selectedColor": "#D49668",
+    "backgroundColor": "#2A4D5A",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/wiki/index",
+        "text": "攻略"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

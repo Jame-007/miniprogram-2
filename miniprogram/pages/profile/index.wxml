@@ -1,0 +1,78 @@
+<view class="container">
+  <!-- 顶部用户信息栏（古风卡片样式） -->
+  <view class="card user-card">
+    <view wx:if="{{!hasLogin}}" class="no-login">
+      <view class="tip">未登录，无法使用记录与签到</view>
+      <button class="login-btn" bindtap="login">微信一键登录</button>
+    </view>
+    <view wx:else class="user-info">
+      <image class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <view class="name">{{userInfo.nickName}}</view>
+      <button class="sign-btn {{signedToday ? 'disabled' : ''}}" bindtap="doSign">
+        {{signedToday ? '今日已签到' : '每日签到'}}
+      </button>
+    </view>
+  </view>
+
+  <!-- 总元宝余额卡片 -->
+  <view class="card balance-card">
+    <view class="balance-title">当前总元宝</view>
+    <view class="balance-num">{{totalBalance}}</view>
+  </view>
+
+  <!-- 日历模块 -->
+  <view class="card calendar-card">
+    <view class="calendar-head">
+      <view class="btn-prev" bindtap="prevMonth">◀</view>
+      <view class="month-title">{{year}}年{{month}}月</view>
+      <view class="btn-next" bindtap="nextMonth">▶</view>
+    </view>
+
+    <view class="week-row">
+      <text class="week-item">日</text>
+      <text class="week-item">一</text>
+      <text class="week-item">二</text>
+      <text class="week-item">三</text>
+      <text class="week-item">四</text>
+      <text class="week-item">五</text>
+      <text class="week-item">六</text>
+    </view>
+
+    <view class="day-row">
+      <block wx:for="{{daysList}}" wx:key="index">
+        <view class="day-item {{item.isToday ? 'today' : ''}} {{item.hasRecord ? 'has-record' : ''}}"
+              bindtap="selectDay" data-day="{{item.day}}">
+          {{item.day}}
+          <view wx:if="{{item.isSigned}}" class="check-mark">✓</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 选中日期标题 -->
+  <view class="date-line">{{selectDate}} 元宝记录</view>
+
+  <!-- 添加记录模块 -->
+  <view class="card add-card">
+    <view class="input-row">
+      <input class="input" type="number" placeholder="输入元宝数量" bindinput="inputMoney" value="{{money}}"/>
+      <picker class="type-picker" range="{{typeList}}" value="{{typeIdx}}" bindchange="changeType">
+        <view class="type-text">{{typeList[typeIdx]}}</view>
+      </picker>
+    </view>
+    <view class="btn-add" bindtap="addRecord">添加记录</view>
+  </view>
+
+  <!-- 记录列表模块（去掉长按删除） -->
+  <view class="card list-card">
+    <view class="list-title">当日明细</view>
+    <view wx:if="{{recordList.length === 0}}" class="empty">暂无记录</view>
+    <block wx:else>
+      <view class="record-item" wx:for="{{recordList}}" wx:key="index">
+        <view class="record-txt {{item.type === '收入' ? 'inc' : 'out'}}">
+          {{item.type === '收入' ? '+' : '-'}}{{item.money}} 元宝
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
