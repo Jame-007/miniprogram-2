@@ -1,1 +1,62 @@
-<view class="page"><view class="card"><text>配速计算（待开发）</text></view></view>
+<navigation-bar title="配速计算器" back="{{true}}" />
+
+<view class="page">
+  <view class="card">
+    <view class="card-title">⚔️ 配速计算器（纯小数精确版）</view>
+    <view class="card-desc">计算你需要多少面板速度和配速宠速度</view>
+
+    <view class="form-group">
+      <text class="label">🏹 队友物理速度</text>
+      <input class="input" type="number" value="{{wuliSpeed}}"
+             bindinput="onWuliInput" placeholder="输入物理速度" />
+    </view>
+
+    <view class="switch-group">
+      <view class="switch-row {{zhenfa ? 'on' : 'off'}}" bindtap="toggleZhenfa">
+        <text class="switch-label">🟢 阵法 +10%（仅人物）</text>
+        <text class="switch-status">{{zhenfa ? '开启' : '关闭'}}</text>
+      </view>
+      <view class="switch-row {{jifeng ? 'on' : 'off'}}" bindtap="toggleJifeng">
+        <text class="switch-label">🟢 疾风 +12%（仅人物）</text>
+        <text class="switch-status">{{jifeng ? '开启' : '关闭'}}</text>
+      </view>
+      <view class="switch-row {{jiansu ? 'on' : 'off'}}" bindtap="toggleJiansu">
+        <text class="switch-label">🔴 缚妖索 -15%（仅人物）</text>
+        <text class="switch-status">{{jiansu ? '开启' : '关闭'}}</text>
+      </view>
+    </view>
+
+    <view class="btn-row">
+      <button class="btn-primary" bindtap="calculate">计算配速</button>
+      <button class="btn-secondary" bindtap="clearAll">重置</button>
+    </view>
+  </view>
+
+  <view class="result-section" wx:if="{{showResult}}">
+    <view class="result-card">
+      <view class="result-row">
+        <text class="result-icon">🧑</text>
+        <view class="result-body">
+          <text class="result-label">人物面板需 ≥</text>
+          <text class="result-value">{{needMe}}</text>
+        </view>
+      </view>
+      <view class="result-row">
+        <text class="result-icon">🐶</text>
+        <view class="result-body">
+          <text class="result-label">配速宠面板需 ≥</text>
+          <text class="result-value">{{needPet}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="detail-card">
+      <text class="detail-text">{{detail}}</text>
+    </view>
+
+    <view class="tip-card">
+      <text class="tip-title">💡 说明</text>
+      <text class="tip-text">用纯小数计算（一直乘到最终结果），不乱敏进位，配速更精准</text>
+    </view>
+  </view>
+</view>
