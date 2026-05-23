@@ -16,7 +16,7 @@
     <view class="desc">战斗乱敏精准计算</view>
   </view>
 
-  <view class="core-item card" bindtap="goPage" data-url="/pages/gold/index">
+  <view class="core-item card" bindtap="goGold">
     <view class="icon">💰</view>
     <view class="title">元宝记录</view>
     <view class="desc">每日收益清晰统计</view>
