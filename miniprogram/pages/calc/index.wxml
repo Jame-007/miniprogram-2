@@ -16,10 +16,6 @@
         <text class="switch-label">🟢 阵法 +10%（仅人物）</text>
         <text class="switch-status">{{zhenfa ? '开启' : '关闭'}}</text>
       </view>
-      <view class="switch-row {{jifeng ? 'on' : 'off'}}" bindtap="toggleJifeng">
-        <text class="switch-label">🟢 疾风 +12%（仅人物）</text>
-        <text class="switch-status">{{jifeng ? '开启' : '关闭'}}</text>
-      </view>
       <view class="switch-row {{jiansu ? 'on' : 'off'}}" bindtap="toggleJiansu">
         <text class="switch-label">🔴 缚妖索 -15%（仅人物）</text>
         <text class="switch-status">{{jiansu ? '开启' : '关闭'}}</text>
