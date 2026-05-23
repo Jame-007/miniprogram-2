@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/wiki/index",
     "pages/profile/index",
-    "pages/ling/ling"
+    "pages/ling/ling",
+    "pages/calc/index",
+    "pages/gold/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#2A4D5A",
